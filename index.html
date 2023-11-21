@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Pedido de Pizza</title>
+</head>
+<body>
+    <style>
+        form {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+    
+        h2 {
+          text-align: center;
+        }
+    
+        .formularioPedido {
+          width: 400px;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 8px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          justify-content: center;
+          margin: 20px auto;
+        }
+    
+        label {
+          margin-bottom: 8px;
+        }
+    
+        input[type="text"],
+        textarea,
+        select {
+          padding: 8px;
+          margin-bottom: 12px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          box-sizing: border-box;
+          width: 100%;
+        }
+    
+        select {
+          height: 80px;
+        }
+    
+        input[type="checkbox"] {
+          margin-right: 8px;
+        }
+    
+        input[type="submit"] {
+          background-color: #4caf50;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+          background-color: #45a049;
+        }
+      </style>
+
+<h2>Formulário de Pedido de Pizza</h2>
+
+<form class="formularioPedido">
+  <label for="nomeCliente">Nome do Cliente:</label>
+  <label id="mensagemErro"></label>
+  <input type="text" id="nomeCliente" name="nomeCliente" required>
+
+  <br>
+
+  <label for="endereco">Endereço:</label>
+  <textarea id="endereco" name="endereco" required></textarea>
+
+  <br>
+
+  <label for="saboresPizza">Escolha o(s) sabor(es) de pizza:</label>
+  <select id="saboresPizza" name="saboresPizza" required>
+    <option value="margherita">Margherita</option>
+    <option value="pepperoni">Pepperoni</option>
+    <option value="quatroQueijos">Quatro Queijos</option>
+    <option value="calabresa">Calabresa</option>
+    <!-- Adicione mais opções conforme necessário -->
+  </select>
+
+  <br>
+
+  <label for="querRefrigerante">Você quer refrigerante?</label>
+  <input type="checkbox" id="querRefrigerante" name="querRefrigerante">
+
+  <br>
+
+  <input type="submit" value="Enviar Pedido" id="button">
+</form>
+<h2>Pedidos dos Clientes</h2>
+    <script src="script.js"></script>
+</body>
+</html>
