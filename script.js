@@ -4,8 +4,12 @@ let select = document.getElementById('saboresPizza');
 let checkbox = document.getElementById('querRefrigerante');
 let button = document.getElementById('button');
 
+
+
 let objetos = [];
 let contador = 1;
+
+
 
 function criarObjeto(e){
     e.preventDefault();
@@ -22,8 +26,6 @@ function criarObjeto(e){
     }
     let nomeObj = 'objeto' + contador;
     let novoObj = new PedidoCliente(ValorCliente,valorendereco,saborPizza,QuerRefrigerante);
-    
- 
     objetos.push({nome: nomeObj, objeto: novoObj});
     contador++;
 
@@ -36,7 +38,6 @@ function criarObjeto(e){
     }else{
         let novaDiv = document.createElement('div');
         novaDiv.classList.add('formularioPedido');
-
         // Iterar sobre as propriedades do objeto e criar parágrafos
         for (let propriedade in novoObj) {
             if (novoObj.hasOwnProperty(propriedade)) {
@@ -45,15 +46,20 @@ function criarObjeto(e){
             novaDiv.appendChild(novoParagrafo);
             }
         }
-
             // Adicionar a div ao corpo do documento
             document.body.appendChild(novaDiv);
             nomeCliente.value='';
             endereco.value='';
             document.getElementById('mensagemErro').textContent='';
-            console.log(novoObj);
+            novoObj.createButton(novaDiv); 
+            
+            
+   
+                 
     }
 }
+
+
 class PedidoCliente {
     constructor (nomeCliente, endereco,select,checkbox){
         this.nome = nomeCliente;
@@ -62,12 +68,27 @@ class PedidoCliente {
         this.refrigerante = checkbox;
     }
 
-    set novovalor(novovalor){
-        this.nome = novovalor;
+    createButton(div){
+        const button = document.createElement('button');
+        button.classList.add('btn-pronto');
+        button.textContent = "Está Pronto!"
+        div.appendChild(button);
+        button.addEventListener('click', () => {
+            div.remove();
+            button.removeEventListener('click', () => {});
+        });
     }
+    
 }
 
+
 button.addEventListener('click', criarObjeto);
+
+
+
+
+
+
 
 
 
