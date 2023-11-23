@@ -1,3 +1,11 @@
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-image: url('pizzabg3.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Ajusta o tamanho da imagem para cobrir todo o corpo */
+    background-position: center; /* Centraliza a imagem no corpo */
+    background-repeat: no-repeat; /* Evita a repetição da imagem */
+}
+
 form {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -10,11 +18,28 @@ form {
 
   h2 {
     text-align: center;
+    margin: 10px auto;
+    color: #353232;
   }
+
+  .container{
+    display: flex;
+  }
+
+ 
+
+  #mensagemErro{
+    display: none;
+    color: #fff;
+    padding: 5px 5px;
+    background-color: #d67b7b;
+    border-radius: 5px;
+  }
+
 
   .formularioPedido {
     max-width: 400px;
-    max-height: 400px;
+    max-height: 500px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
@@ -38,11 +63,16 @@ form {
   textarea,
   select {
     padding: 8px;
-    margin-bottom: 12px;
+    margin-bottom: 5px;
+    margin-top: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
+  }
+
+  #endereco{
+    min-height: 40px;
   }
 
   select {

@@ -10,46 +10,54 @@
 
 <body>
 
-  <h2>Formulário de Pedido de Pizza</h2>
+  
+  
+    <form class="formularioPedido">
+      <h2>Formulário de Pedido de Pizza</h2>
+      <label for="nomeCliente">Nome do Cliente:</label>
+      
+      <input type="text" id="nomeCliente" name="nomeCliente" required>
 
-  <form class="formularioPedido">
-    <label for="nomeCliente">Nome do Cliente:</label>
-    <label id="mensagemErro"></label>
-    <input type="text" id="nomeCliente" name="nomeCliente" required>
+      <br>
 
-    <br>
+      <label for="endereco">Endereço:</label>
+      <textarea id="endereco" name="endereco" required></textarea>
 
-    <label for="endereco">Endereço:</label>
-    <textarea id="endereco" name="endereco" required></textarea>
+      <br>
 
-    <br>
+      <label for="saboresPizza">Escolha o(s) sabor(es) de pizza:</label>
+      <select id="saboresPizza" name="saboresPizza" required>
+        <option value="margherita">Margherita</option>
+        <option value="pepperoni">Pepperoni</option>
+        <option value="quatroQueijos">Quatro Queijos</option>
+        <option value="calabresa">Calabresa</option>
+        <!-- Adicione mais opções conforme necessário -->
+      </select>
 
-    <label for="saboresPizza">Escolha o(s) sabor(es) de pizza:</label>
-    <select id="saboresPizza" name="saboresPizza" required>
-      <option value="margherita">Margherita</option>
-      <option value="pepperoni">Pepperoni</option>
-      <option value="quatroQueijos">Quatro Queijos</option>
-      <option value="calabresa">Calabresa</option>
-      <!-- Adicione mais opções conforme necessário -->
-    </select>
+      <br>
 
-    <br>
+      <label for="querRefrigerante">Você quer refrigerante?</label>
+      <input type="checkbox" id="querRefrigerante" name="querRefrigerante">
 
-    <label for="querRefrigerante">Você quer refrigerante?</label>
-    <input type="checkbox" id="querRefrigerante" name="querRefrigerante">
+      <br>
 
-    <br>
+      <label for="tempo">Qual o Tempo Estimado?</label>
+      <input type="number" id="tempo" placeholder="Tempo em minutos" required>
 
-    <input type="submit" value="Enviar Pedido" id="button">
+      <br>
+
+      <p id="mensagemErro"></p>
+      <input type="submit" value="Enviar Pedido" id="button">
+      
 
 
-  </form>
+    </form>
+    
+    <div class="formularioPedido">
+      <h2 class="h2-pedidos">Pedidos dos Clientes</h2>
+      <h2 class="h2-pedidos" id="h2-pedidos">Não temos pedidos ativos</h2>
+    </div>
 
-  <h2>Pedidos dos Clientes</h2>
-
-  <div>
-    <h2 class="formularioPedido" id="h2-pedidos">Não temos pedidos ativos</h2>
-  </div>
   <div id="card-pedidos" class="card-pedidos">
 
   </div>
