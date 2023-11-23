@@ -19,14 +19,11 @@ function salvarObjetosNoLocalStorage() {
 }
 
 class PedidoCliente {
-    constructor(nomeCliente, endereco, select, checkbox,tempoEmMinutos) {
+    constructor(nomeCliente, endereco, select, checkbox, tempo) {
         this.Nome = nomeCliente;
         this.Endereco = endereco;
         this.Pizza = select;
         this.Refrigerante = checkbox;
-        // this.tempoRestante = tempoEmMinutos * 60; // Converter minutos para segundos
-        // this.intervalo = null;
-        // this.iniciarContador();
     }
 
     criarDiv() {
@@ -63,7 +60,7 @@ class PedidoCliente {
             h2pedidos.style.display = "block";
             // Atualizar objetos após a remoção
             objetos = objetos.filter((obj) => obj.Nome !== this.Nome);
-            salvarObjetosNoLocalStorage();
+            salvarObjetosNoLocalStorage();    
         });
     }
 }
@@ -77,6 +74,7 @@ function criarObjeto(e) {
     let endereco = document.getElementById("endereco").value.trim();
     let saboresPizza = document.getElementById("saboresPizza").value;
     let querRefrigerante = document.getElementById("querRefrigerante");
+    
     
 
     if (!nomeCliente || !endereco ) {
@@ -96,6 +94,7 @@ function criarObjeto(e) {
         endereco,
         saboresPizza,
         querRefrigerante,
+         
     );
 
     objetos.push(novoObj);
@@ -124,6 +123,7 @@ objetosSalvos.forEach((obj) => {
         obj.Endereco,
         obj.Pizza,
         obj.Refrigerante,
+     
       
     );
     novoObj.criarDiv();
